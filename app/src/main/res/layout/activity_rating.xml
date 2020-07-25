@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.RatingActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/cancel_call"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/cancelbtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_close_black_24dp" />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_below="@id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Thank You For Riding"/>
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            app:mrb_progressTint="#000"
+            app:mrb_secondaryProgressTint="#000"
+            android:layout_gravity="center"
+            android:id="@+id/ratingbar"
+            style="@style/Widget.MaterialRatingBar.RatingBar"/>
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Leave a Comment"
+            android:padding="10dp"
+            app:met_hideUnderline="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/txt_comment"/>
+
+
+        <Button
+            android:background="@drawable/pickup_req_bg"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comment"
+            android:textColor="#fff"
+            android:id="@+id/commentBtn"
+            android:textSize="22sp"
+            android:textAllCaps="false"/>
+
+
+    </LinearLayout>
+</RelativeLayout>
