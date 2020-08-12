@@ -21,7 +21,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Customer Name"
+        android:text="Driver Name"
         android:id="@+id/header_customer_name"
         android:textSize="20sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />

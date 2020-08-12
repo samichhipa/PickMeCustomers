@@ -594,7 +594,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
+            int id = item.getItemId();
 
         if (id == R.id.nav_home) {
 
@@ -680,7 +680,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mMap.setMyLocationEnabled(true);
+
 
 
         mMap.setInfoWindowAdapter(new CustomInfoHelper(this));
@@ -746,7 +746,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         BuildLocationCallback();
         buildLocationRequest();
-        displayLocation();
+        mMap.setMyLocationEnabled(true);
     }
 
 
@@ -978,7 +978,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        // stopLocation();
+         stopLocation();
 
 
     }
@@ -1028,6 +1028,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onDestroy() {
         LocalBroadcastManager.getInstance(HomeActivity.this).unregisterReceiver(receiver);
         LocalBroadcastManager.getInstance(HomeActivity.this).unregisterReceiver(dropoff);
+
+
+        fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+            currentMarker.remove();
 
         super.onDestroy();
     }
